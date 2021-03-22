@@ -53,7 +53,7 @@ class App extends Component {
     const itemInCart = this.state.cart.find((item) => item.id === id);
 
     if (itemInCart) {
-      if (itemInCart.number <= 10) {
+      if (itemInCart.number <= 9) {
         const index = this.state.cart.indexOf(itemInCart);
 
         this.state.cart[index].number += 1;
