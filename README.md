@@ -1,190 +1,121 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** victorgreco, repo_name, twitter_handle, email
--->
+`#react-basics` `#assembler-school` `#master-in-software-engineering`
 
+# React Basics Classes Shopping Cart App <!-- omit in toc -->
 
+A demo app to learn the basics of React and to create a shopping cart using classes.
 
+## Table of Contents <!-- omit in toc -->
 
+- [Getting Started](#getting-started)
+- [Instructions](#instructions)
+- [Extra steps 💯](#extra-steps-)
+- [Requirements](#requirements)
+- [Available Scripts](#available-scripts)
+- [Author](#author)
+- [License](#license)
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/victorgreco/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">YOUR_TITLE</h3>
-
-  <p align="center">
-    YOUR_SHORT_DESCRIPTION
-    <br />
-    <a href="https://github.com/victorgreco/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/victorgreco/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/victorgreco/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/victorgreco/repo_name/issues">Request Feature</a>
-  </p>
-</p>
-
-
-
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`victorgreco`, `repo_name`, `twitter_handle`, `email`
-
-
-### Built With
-
-* []()
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Prerequisites
+Run `npm i` or `yarn` in the terminal to install the dependencies.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
+Then, run `npm run start` or `yarn start` to start up the app.
+
+The app will be run by default in the following url: `http://localhost:3000/`
+
+### The repo
+
+First, you will need to clone the repo:
+
+```bash
+$ git clone https://github.com/assembler-school/react-basics-classes-shopping-cart.git
 ```
 
-### Installation
+## Instructions
 
-1. Clone the repo
-```sh
-git clone https://github.com/victorgreco/repo_name.git
-```
-2. Install NPM packages
-```sh
-npm install
-```
+<img src='src/img/repo/react-basics-classes-initial.png' width='600'>
 
+Once you have installed the dependencies of the pill you will have to convert all the HTML code from the App.js file to React components such that the code is as reusable and modularized as possible.
 
+Each UI element should be a React component, for example, buttons are UI elements that are reused in multiple places in the app so they should be extracted to React components.
 
-<!-- USAGE EXAMPLES -->
-## Usage
+### App features
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Once you have modularized the app in components you will have to implement to logic so that you can create an ecommerce app.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+#### Rendering the products
 
+The products are stored in the `products.js` file which you should use to render the products to the screen dynamically using a JavaScript loop.
 
+Each product should have the event listeners and methods needed to handle the UI interactions needed such as adding the product to the cart.
 
-<!-- ROADMAP -->
-## Roadmap
+#### Add to cart
 
-See the [open issues](https://github.com/victorgreco/repo_name/issues) for a list of proposed features (and known issues).
+<img src='src/img/repo/react-basics-classes-add-to-cart.png' width='600'>
 
+Clicking the `Add to Cart` button should add the product that was clicked to the shopping cart.
 
+By default, the shopping cart will be empty.
 
-<!-- CONTRIBUTING -->
-## Contributing
+The items in the cart that are visible the first time you open the app are only there as examples, you should convert them to React components which you should be able to render in the shopping cart when the `Add to Cart` button is clicked to add products to the cart.
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+#### Shopping cart
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+<img src='src/img/repo/react-basics-classes-added-to-cart.png' width='600'>
 
+Once a product has been added to the cart you should be able to:
 
+- Edit the product quantity using the select element which will update the cart’s total price
+- Remove items from the cart which will update the cart’s total price
+- The cart total price should always be updated so that it represents the total cost of all the items in the cart
+- When the cart is empty you should conditionally render a message inside the cart saying that the cart is empty. Then, when the cart has had items added, you should instead render the cart items and remove the default message.
 
-<!-- LICENSE -->
+### State management
+
+You should use React to handle the state management in the app. You cannot use a state management library.
+
+## Extra steps 💯
+
+Once you have finished the initial part of the pill you should implement the following steps to improve your skills:
+
+<img src='src/img/repo/react-basics-classes-phase-2.png' width='600'>
+
+- You should check if the cart item has already been added to the cart to only update the quantity instead of adding it again. The quantity should not be larger than 10 units for each product
+- Store the items in local storage and load them if the page is reloaded so that the cart items are not lost of page refresh
+- Each time the page is refreshed you should load the cart items from local storage to save them in the React state so that the app renders with the contents from local storage if there is any. Otherwise, the cart should display the default message of “Your cart is empty”
+
+## Requirements
+
+- You should extract and modularize all the UI elements to React components
+- The products must be rendered dynamically using JavaScript loops
+- The products should be rendered as React components
+- You cannot use external state management libraries
+- All the components that require state should be created using React
+- Use `classes` and `setState` methods to update the state of the application
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+## Learn More <!-- omit in toc -->
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Author
+
+[Dani Lucaci](https://www.danilucaci.com/).
+
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Victor Greco - [linkedin](https://www.linkedin.com/in/victor-greco/) - victorgreco263@gmail.com
-
-Project Link: [https://github.com/victorgreco/repo_name](https://github.com/victorgreco/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/victorgreco/repo.svg?style=flat-square
-[contributors-url]: https://github.com/victorgreco/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/victorgreco/repo.svg?style=flat-square
-[forks-url]: https://github.com/victorgreco/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/victorgreco/repo.svg?style=flat-square
-[stars-url]: https://github.com/victorgreco/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/victorgreco/repo.svg?style=flat-square
-[issues-url]: https://github.com/victorgreco/repo/issues
-[license-shield]: https://img.shields.io/github/license/victorgreco/repo.svg?style=flat-square
-[license-url]: https://github.com/victorgreco/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/victor-greco/
-[product-screenshot]: images/screenshot.png
+Licensed under the [MIT License](./LICENSE).
